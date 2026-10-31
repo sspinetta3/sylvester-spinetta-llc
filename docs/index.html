@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Florida Bid Search</title>
   <meta property="og:title" content="Florida Bid Search" />
-  <meta property="og:description" content="Default $29.95/mo with 4 counties and 2 emails per week. $4.99 per extra county or email day. Full State $199/mo." />
+  <meta property="og:description" content="Default $29.94/mo (4 counties × $4.99 + 2 emails/week × $4.99). Full State $199/mo." />
   <meta property="og:type" content="website" />
-  <meta name="description" content="Florida Bid Search — default $29.95/mo (4 counties, 2 emails per week). $4.99 per extra county or email day. Full State $199/mo." />
+  <meta name="description" content="Florida Bid Search — $0 base + $4.99 per county + $4.99 per email day. Default 4+2 = $29.94/mo. Full State $199/mo." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -368,13 +368,13 @@
           <h1>Florida Bid Search</h1>
           <p class="subtitle">Florida County RFP Bid Search</p>
           <p class="desc">
-            Default plan: 4 Florida counties and 2 emails per week for $29.95/month. Add more counties or email days at $4.99 each. One-year contract. No setup fee.
+            $0.00 base. Price is $4.99 per county and $4.99 per email day. Default: 4 counties + 2 emails per week = $29.94/month. One-year contract. No setup fee.
           </p>
 
           <div class="pricing-grid">
             <section class="builder" aria-labelledby="build-title">
               <h2 id="build-title">Build your plan</h2>
-              <p class="fee-line"><strong>$4.99/month</strong> per county · <strong>$4.99/month</strong> per email day</p>
+              <p class="fee-line"><strong>$0.00</strong> base · <strong>$4.99/month</strong> per county · <strong>$4.99/month</strong> per email day</p>
               <div class="pickers">
                 <label>
                   Number of Counties
@@ -387,10 +387,10 @@
               </div>
               <div class="total-row">
                 <span class="total-label">Monthly total</span>
-                <span class="total-amt" id="total" aria-live="polite">$29.95</span>
+                <span class="total-amt" id="total" aria-live="polite">$29.94</span>
               </div>
               <p class="note" id="total-note">
-                Default included: 4 counties + 2 emails per week = $29.95/mo. Extra counties or email days are $4.99 each.
+                Default: 4 counties + 2 emails per week = $29.94/mo (6 × $4.99). Each additional county or email day is $4.99.
                 On Stripe Checkout, confirm the same counts (link opens at 4 and 2; quantities are adjustable there down to 0).
               </p>
               <button type="button" class="btn" id="checkout-btn">Continue to checkout</button>
@@ -472,10 +472,10 @@
 
   <script>
     (function () {
-      // Display both as $4.99; charge math matches Stripe (counties 499¢, days 499.5¢).
+      // $0 base; both add-ons $4.99 (499¢). Default 4+2 = $29.94.
       var COUNTY_CENTS = 499;
-      var DAY_CENTS = 499.5;
-      var CONFIG_URL = "https://buy.stripe.com/test_aFa8wQ6T83760Qj8NQ7N606";
+      var DAY_CENTS = 499;
+      var CONFIG_URL = "https://buy.stripe.com/test_14AcN61yO3762Yr0hk7N607";
       var FULL_URL = "https://buy.stripe.com/test_cNibJ21yO232dD55BE7N604";
 
       var countiesEl = document.getElementById("counties");
