@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Florida Bid Search</title>
+  <meta property="og:title" content="Florida Bid Search" />
+  <meta property="og:description" content="No setup fee. Four Florida counties covered. Monday and Thursday bid reports delivered to your email. One-year contract." />
+  <meta property="og:type" content="website" />
+  <meta name="description" content="Florida Bid Search — Florida County RFP Bid Search. $29.95/month. No setup fee." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0a1f44;
+      --navy-deep: #06152e;
+      --cyan: #00b4ef;
+      --cyan-bright: #3dd6ff;
+      --orange: #ff6b2c;
+      --pink: #ff2d7a;
+      --white: #ffffff;
+      --fog: rgba(255,255,255,0.88);
+      --shadow: 0 24px 60px rgba(6, 21, 46, 0.45);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      font-family: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--white);
+      background:
+        radial-gradient(1200px 700px at 10% -10%, rgba(255,107,44,0.55), transparent 55%),
+        radial-gradient(900px 600px at 95% 10%, rgba(255,45,122,0.5), transparent 50%),
+        radial-gradient(800px 700px at 80% 100%, rgba(0,180,239,0.45), transparent 55%),
+        radial-gradient(700px 500px at 0% 90%, rgba(61,214,255,0.28), transparent 50%),
+        linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 45%, #122a5c 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1.25rem 2rem;
+    }
+    .page {
+      width: min(720px, 100%);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .logo {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 0.85rem;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    }
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .company {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cyan-bright);
+    }
+    .card {
+      background: linear-gradient(165deg, rgba(255,255,255,0.16), rgba(255,255,255,0.06));
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 28px;
+      padding: 2rem 1.75rem 2.25rem;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      text-align: center;
+    }
+    .product {
+      width: min(420px, 100%);
+      margin: 0 auto 1.5rem;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.28);
+      aspect-ratio: 1 / 1;
+      background: rgba(0,0,0,0.2);
+    }
+    .product img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    h1 {
+      font-size: clamp(1.75rem, 5vw, 2.35rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 0.45rem;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: clamp(1rem, 2.8vw, 1.15rem);
+      font-weight: 600;
+      color: var(--fog);
+      margin-bottom: 1rem;
+    }
+    .price {
+      font-size: clamp(2rem, 6vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+    .desc {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--fog);
+      margin: 0 auto 1.75rem;
+      max-width: 38ch;
+    }
+    .subscribe {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: min(100%, 360px);
+      min-height: 58px;
+      padding: 0.95rem 1.5rem;
+      font-family: inherit;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      color: var(--white);
+      border: none;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--orange), var(--pink) 55%, #ff4d9a);
+      box-shadow: 0 14px 34px rgba(255,45,122,0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .subscribe:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(255,45,122,0.45);
+    }
+    .subscribe:focus-visible {
+      outline: 3px solid var(--cyan-bright);
+      outline-offset: 3px;
+    }
+    footer {
+      margin-top: auto;
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+    }
+    @media (max-width: 480px) {
+      body { padding: 1.15rem 1rem 1.5rem; }
+      .logo { width: 80px; height: 80px; border-radius: 18px; }
+      .card { padding: 1.5rem 1.2rem 1.75rem; border-radius: 22px; }
+      .product { border-radius: 16px; margin-bottom: 1.25rem; }
+      .subscribe { min-height: 54px; font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">
+        <img src="logo.png" alt="Sylvester Spinetta LLC logo" width="96" height="96" />
+      </div>
+      <p class="company">Sylvester Spinetta LLC</p>
+    </header>
+
+    <main>
+      <section class="card" aria-labelledby="title">
+        <div class="product">
+          <img
+            src="product-1000.png"
+            alt="Florida County RFP Bid Search product image"
+            width="1000"
+            height="1000"
+          />
+        </div>
+        <h1 id="title">Florida Bid Search</h1>
+        <p class="subtitle">Florida County RFP Bid Search</p>
+        <p class="price">$29.95/month</p>
+        <p class="desc">
+          No setup fee. Four Florida counties covered. Monday and Thursday bid reports delivered to your email. One-year contract.
+        </p>
+        <a
+          class="subscribe"
+          href="https://buy.stripe.com/test_6oU8wQ7Xc9vu9mPaVY7N601"
+        >Subscribe</a>
+      </section>
+    </main>
+
+    <footer>
+      © 2026 Sylvester Spinetta LLC
+    </footer>
+  </div>
+</body>
+</html>
