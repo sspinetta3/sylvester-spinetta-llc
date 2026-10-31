@@ -368,7 +368,7 @@
           <h1>Florida Bid Search</h1>
           <p class="subtitle">Florida County RFP Bid Search</p>
           <p class="desc">
-            $0.00 base. Price is $5.00 per county and $4.99 per email day. Default: 4 counties + 2 emails per week = $29.98/month. One-year contract. No setup fee.
+            Minimum 4 counties and 2 emails per week. Price is $5.00 per county and $4.99 per email day. Default: 4 counties + 2 emails per week = $29.98/month. One-year contract. No setup fee.
           </p>
 
           <div class="pricing-grid">
@@ -415,7 +415,7 @@
               <ul>
                 <li>Florida county bid and RFP posting search</li>
                 <li>Email reports on the days per week you choose</li>
-                <li>Scale from 0–67 counties and 0–7 emails per week</li>
+                <li>Scale from 4–67 counties and 2–7 emails per week</li>
                 <li>No setup fee · One-year contract</li>
               </ul>
             </section>
@@ -483,9 +483,9 @@
       var totalEl = document.getElementById("total");
       var btn = document.getElementById("checkout-btn");
 
-      function fillSelect(el, max, selected) {
+      function fillSelect(el, min, max, selected) {
         var html = "";
-        for (var i = 0; i <= max; i++) {
+        for (var i = min; i <= max; i++) {
           html += '<option value="' + i + '"' + (i === selected ? " selected" : "") + ">" + i + "</option>";
         }
         el.innerHTML = html;
@@ -513,8 +513,8 @@
         }
       }
 
-      fillSelect(countiesEl, 67, 4);
-      fillSelect(daysEl, 7, 2);
+      fillSelect(countiesEl, 4, 67, 4);
+      fillSelect(daysEl, 2, 7, 2);
       countiesEl.addEventListener("change", calc);
       daysEl.addEventListener("change", calc);
       btn.addEventListener("click", function () {
