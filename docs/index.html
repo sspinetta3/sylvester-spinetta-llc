@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Florida Bid Search</title>
   <meta property="og:title" content="Florida Bid Search" />
-  <meta property="og:description" content="No setup fee. Four Florida counties covered. Monday and Thursday bid reports delivered to your email. One-year contract." />
+  <meta property="og:description" content="CPU fee $5.00/mo. Add counties and delivery days at $4.99 each. Full State $199/mo for all 67 counties, 7 days a week." />
   <meta property="og:type" content="website" />
-  <meta name="description" content="Florida Bid Search — Florida County RFP Bid Search. Base $29.95/mo. Bundle $299/mo for all 67 counties, 7 days a week." />
+  <meta name="description" content="Florida Bid Search — CPU fee $5.00/mo starting fee. +$4.99 per county, +$4.99 per delivery day. Full State $199/mo." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -38,7 +38,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0.5rem 1.1rem 0.4rem;
+      padding: 0.45rem 1.1rem 0.35rem;
       overflow-x: hidden;
     }
     .page {
@@ -52,7 +52,7 @@
       display: flex;
       align-items: center;
       gap: 0.65rem;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
       flex-shrink: 0;
     }
     .logo {
@@ -76,7 +76,7 @@
       background: linear-gradient(165deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05));
       border: 1px solid rgba(255,255,255,0.2);
       border-radius: 18px;
-      padding: 0.7rem 0.95rem 0.65rem;
+      padding: 0.65rem 0.9rem 0.55rem;
       box-shadow: var(--shadow);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
@@ -87,15 +87,15 @@
     }
     .hero {
       display: grid;
-      grid-template-columns: minmax(240px, 0.78fr) minmax(420px, 1.22fr);
-      gap: 0.85rem 1.1rem;
+      grid-template-columns: minmax(220px, 0.72fr) minmax(440px, 1.28fr);
+      gap: 0.75rem 1rem;
       align-items: start;
       flex: 1;
       min-height: 0;
     }
     .product {
       width: 100%;
-      max-width: 380px;
+      max-width: 340px;
       margin: 0 auto;
       border-radius: 12px;
       overflow: hidden;
@@ -106,214 +106,240 @@
       align-self: center;
     }
     .product img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .info { display: flex; flex-direction: column; gap: 0.4rem; min-width: 0; }
+    .info { display: flex; flex-direction: column; gap: 0.35rem; min-width: 0; }
     h1 {
-      font-size: clamp(1.4rem, 2.1vw, 1.85rem);
+      font-size: clamp(1.35rem, 2vw, 1.75rem);
       font-weight: 800;
       line-height: 1.08;
       letter-spacing: -0.02em;
     }
     .subtitle {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
       color: var(--fog);
-      margin-top: -0.1rem;
+      margin-top: -0.08rem;
     }
     .desc {
-      font-size: 0.84rem;
-      line-height: 1.35;
+      font-size: 0.8rem;
+      line-height: 1.3;
       color: var(--fog);
-      max-width: 58ch;
+      max-width: 60ch;
     }
-    .pricing {
+    .pricing-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 0.4rem;
     }
-    .price-card {
+    .builder, .bundle-card {
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 11px;
       padding: 0.45rem 0.55rem 0.5rem;
     }
-    .price-card.bundle {
-      grid-column: 1 / -1;
+    .bundle-card {
       background: linear-gradient(135deg, rgba(255,107,44,0.22), rgba(255,45,122,0.18), rgba(0,180,239,0.18));
-      border-color: rgba(255,107,44,0.45);
+      border-color: rgba(255,107,44,0.5);
     }
-    .price-card h2 {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--cyan-bright);
-      margin-bottom: 0.15rem;
-    }
-    .price-card .amt {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: var(--orange);
-      line-height: 1.1;
-    }
-    .price-card .amt span { font-size: 0.78rem; font-weight: 600; color: var(--muted); }
-    .price-card p {
-      font-size: 0.78rem;
-      line-height: 1.3;
-      color: var(--fog);
-      margin-top: 0.2rem;
-    }
-    .price-card .save {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #7dffb3;
-      margin-top: 0.15rem;
-    }
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.1rem;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 38px;
-      padding: 0.45rem 0.85rem;
-      font-family: inherit;
-      font-size: 0.88rem;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      text-decoration: none;
-      color: var(--white);
-      border-radius: 10px;
-      border: 1px solid transparent;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--orange), var(--pink) 55%, #ff4d9a);
-      box-shadow: 0 8px 20px rgba(255,45,122,0.3);
-    }
-    .btn-bundle {
-      background: linear-gradient(135deg, #ff8a3d, #ff2d7a);
-      box-shadow: 0 8px 20px rgba(255,107,44,0.32);
-    }
-    .btn-secondary {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.28);
-    }
-    .btn:hover { filter: brightness(1.06); }
-    .btn:focus-visible { outline: 3px solid var(--cyan-bright); outline-offset: 2px; }
-    .panels {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.4rem;
-    }
-    .panel {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 11px;
-      padding: 0.4rem 0.5rem 0.45rem;
-    }
-    .panel h2 {
-      font-size: 0.7rem;
+    .builder h2, .bundle-card h2 {
+      font-size: 0.68rem;
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--cyan-bright);
       margin-bottom: 0.25rem;
     }
-    .panel ul { list-style: none; }
-    .panel li {
+    .fee-line {
+      font-size: 0.8rem;
+      color: var(--fog);
+      margin-bottom: 0.3rem;
+    }
+    .fee-line strong { color: var(--orange); font-size: 0.95rem; }
+    .pickers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.35rem;
+      margin-bottom: 0.35rem;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      background: rgba(6,21,46,0.65);
+      color: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.35rem 0.5rem;
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color-scheme: dark;
+    }
+    .total-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin: 0.15rem 0 0.35rem;
+    }
+    .total-label { font-size: 0.78rem; color: var(--muted); font-weight: 600; }
+    .total-amt {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .note {
+      font-size: 0.72rem;
+      line-height: 1.3;
+      color: var(--muted);
+      margin: 0.25rem 0 0.35rem;
+    }
+    .bundle-card .amt {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--orange);
+      line-height: 1.1;
+    }
+    .bundle-card p {
       font-size: 0.76rem;
       line-height: 1.3;
       color: var(--fog);
-      padding-left: 0.75rem;
-      position: relative;
+      margin: 0.2rem 0 0.4rem;
+    }
+    .locked {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #7dffb3;
       margin-bottom: 0.15rem;
     }
-    .panel li:last-child { margin-bottom: 0; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 36px;
+      padding: 0.4rem 0.75rem;
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--white);
+      border-radius: 10px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--orange), var(--pink) 55%, #ff4d9a);
+      box-shadow: 0 8px 18px rgba(255,45,122,0.28);
+    }
+    .btn-bundle {
+      background: linear-gradient(135deg, #ff8a3d, #ff2d7a);
+    }
+    .btn:hover { filter: brightness(1.06); }
+    .btn:focus-visible { outline: 3px solid var(--cyan-bright); outline-offset: 2px; }
+    .panels {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.35rem;
+    }
+    .panel, .meta {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.35rem 0.45rem 0.4rem;
+    }
+    .panel h2, .meta h2 {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cyan-bright);
+      margin-bottom: 0.2rem;
+    }
+    .panel ul { list-style: none; }
+    .panel li, .meta p, .step {
+      font-size: 0.74rem;
+      line-height: 1.28;
+      color: var(--fog);
+    }
+    .panel li {
+      padding-left: 0.7rem;
+      position: relative;
+      margin-bottom: 0.12rem;
+    }
     .panel li::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 0.4em;
+      top: 0.38em;
       width: 5px;
       height: 5px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--orange), var(--pink));
     }
-    .steps { display: flex; flex-direction: column; gap: 0.2rem; }
+    .steps { display: flex; flex-direction: column; gap: 0.15rem; }
     .step {
       display: grid;
-      grid-template-columns: 1.15rem 1fr;
-      gap: 0.3rem;
+      grid-template-columns: 1.05rem 1fr;
+      gap: 0.28rem;
       align-items: start;
-      font-size: 0.76rem;
-      line-height: 1.3;
-      color: var(--fog);
     }
     .step-num {
-      width: 1.15rem;
-      height: 1.15rem;
+      width: 1.05rem;
+      height: 1.05rem;
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       font-weight: 800;
       background: linear-gradient(135deg, var(--orange), var(--pink));
-      color: var(--white);
     }
     .meta-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.4rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.35rem;
     }
-    .meta {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 11px;
-      padding: 0.4rem 0.5rem;
-    }
-    .meta h2 {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+    .contact a {
       color: var(--cyan-bright);
-      margin-bottom: 0.15rem;
+      text-decoration: none;
+      font-weight: 600;
     }
-    .meta p { font-size: 0.76rem; line-height: 1.3; color: var(--fog); }
-    .contact { font-size: 0.76rem; color: var(--muted); }
+    .contact a:hover { text-decoration: underline; }
     footer {
       flex-shrink: 0;
-      padding-top: 0.35rem;
+      padding-top: 0.3rem;
       text-align: center;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: rgba(255,255,255,0.5);
     }
     @media (max-width: 900px) {
-      body { padding: 0.85rem 0.9rem 0.85rem; height: auto; overflow: auto; }
+      body { padding: 0.8rem 0.85rem; height: auto; overflow: auto; }
       html, body { height: auto; }
-      .hero { grid-template-columns: 1fr; gap: 0.75rem; }
-      .product { max-width: 280px; }
-      .pricing, .panels, .meta-row { grid-template-columns: 1fr; }
-      .price-card.bundle { grid-column: auto; }
-      .card { padding: 0.85rem; }
-      header.top { margin-bottom: 0.6rem; }
-      .cta-row { flex-direction: column; }
-      .btn { width: 100%; }
+      .hero { grid-template-columns: 1fr; }
+      .product { max-width: 260px; }
+      .pricing-grid, .panels, .meta-row, .pickers { grid-template-columns: 1fr; }
+      .card { padding: 0.8rem; }
     }
     @media (max-height: 820px) and (min-width: 901px) {
-      body { padding: 0.3rem 0.85rem 0.25rem; }
-      .logo { width: 34px; height: 34px; }
-      .product { max-width: 300px; }
-      h1 { font-size: 1.35rem; }
-      .info { gap: 0.3rem; }
-      .card { padding: 0.55rem 0.75rem; }
-      .price-card .amt { font-size: 1.02rem; }
-      .btn { min-height: 34px; font-size: 0.82rem; }
-      .panels, .pricing, .meta-row { gap: 0.3rem; }
+      body { padding: 0.25rem 0.8rem 0.2rem; }
+      .logo { width: 32px; height: 32px; }
+      .product { max-width: 280px; }
+      h1 { font-size: 1.3rem; }
+      .info { gap: 0.25rem; }
+      .card { padding: 0.45rem 0.7rem; }
+      .btn { min-height: 32px; font-size: 0.8rem; }
+      .total-amt { font-size: 1.15rem; }
     }
   </style>
 </head>
@@ -334,7 +360,7 @@
         <div class="product">
           <img
             src="product-1000.png"
-            alt="Florida County RFP Bid Search product image"
+            alt="Florida Bid Search product image"
             width="1000"
             height="1000"
           />
@@ -344,48 +370,58 @@
           <h1>Florida Bid Search</h1>
           <p class="subtitle">Florida County RFP Bid Search</p>
           <p class="desc">
-            No setup fee. Four Florida counties covered. Monday and Thursday bid reports delivered to your email. One-year contract.
+            Start with a monthly CPU fee, then add Florida counties and report delivery days. One-year contract. No setup fee.
           </p>
 
-          <section class="pricing" aria-labelledby="pricing-title">
-            <h2 id="pricing-title" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Pricing</h2>
-            <div class="price-card">
-              <h2>Base</h2>
-              <p class="amt">$29.95<span>/mo</span></p>
-              <p>4 Florida counties · Monday and Thursday email reports · No setup fee · One-year contract</p>
-            </div>
-            <div class="price-card">
-              <h2>Extra county</h2>
-              <p class="amt">+$4.95<span>/mo each</span></p>
-              <p>Add up to 63 more counties (67 total = entire state)</p>
-            </div>
-            <div class="price-card">
-              <h2>Extra delivery day</h2>
-              <p class="amt">+$4.95<span>/mo each</span></p>
-              <p>Add up to 5 more days for 7 days a week</p>
-            </div>
-            <div class="price-card bundle">
-              <h2>Bundle — all 67 counties, 7 days a week</h2>
-              <p class="amt">$299<span>/mo</span></p>
-              <p>Full-state daily coverage. À la carte for the same coverage is $366.55/mo ($29.95 + 63 × $4.95 + 5 × $4.95).</p>
-              <p class="save">Save $67.55/mo vs building it à la carte</p>
-            </div>
-          </section>
+          <div class="pricing-grid">
+            <section class="builder" aria-labelledby="build-title">
+              <h2 id="build-title">Build your plan</h2>
+              <p class="fee-line"><strong>$5.00/month</strong> CPU fee (starting fee — includes 0 counties and 0 days)</p>
+              <p class="fee-line">+$4.99/mo per county · +$4.99/mo per delivery day</p>
+              <div class="pickers">
+                <label>
+                  Counties
+                  <select id="counties" name="counties" aria-describedby="total-note">
+                  </select>
+                </label>
+                <label>
+                  Delivery days
+                  <select id="days" name="days" aria-describedby="total-note">
+                  </select>
+                </label>
+              </div>
+              <div class="total-row">
+                <span class="total-label">Monthly total</span>
+                <span class="total-amt" id="total" aria-live="polite">$34.94</span>
+              </div>
+              <p class="note" id="total-note">
+                Default example: 4 counties + 2 days = $34.94 ($5.00 + 4 × $4.99 + 2 × $4.99). Example: 1 county + 1 day = $14.98.
+                On Stripe Checkout, confirm the same county and day counts (payment links open with defaults; quantities are adjustable there).
+              </p>
+              <button type="button" class="btn" id="checkout-btn">Continue to checkout</button>
+            </section>
 
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://buy.stripe.com/test_00wdRa7Xc6jifLdfce7N603">Build your plan</a>
-            <a class="btn btn-bundle" href="https://buy.stripe.com/test_6oUbJ2gtI7nmcz11lo7N602">Get the full-state bundle</a>
-            <a class="btn btn-secondary" href="https://buy.stripe.com/test_6oU8wQ7Xc9vu9mPaVY7N601">Start with base plan</a>
+            <section class="bundle-card" aria-labelledby="full-state-title">
+              <p class="locked">Locked plan</p>
+              <h2 id="full-state-title">Full State</h2>
+              <p class="amt">$199<span style="font-size:0.78rem;font-weight:600;color:var(--muted)">/month</span></p>
+              <p>All 67 Florida counties, 7 days a week. Fixed plan — no pickers.</p>
+              <a
+                class="btn btn-bundle"
+                id="full-state-btn"
+                href="https://buy.stripe.com/test_cNibJ21yO232dD55BE7N604"
+              >Get Full State</a>
+            </section>
           </div>
 
           <div class="panels">
             <section class="panel" aria-labelledby="what-you-get">
               <h2 id="what-you-get">What you get</h2>
               <ul>
-                <li>Monday and Thursday bid reports by email (base)</li>
-                <li>Coverage across four Florida counties (base)</li>
                 <li>Florida county bid and RFP posting search</li>
-                <li>No setup fee</li>
+                <li>Email reports on the delivery days you choose</li>
+                <li>Scale from 0–67 counties and 0–7 days</li>
+                <li>No setup fee · One-year contract</li>
               </ul>
             </section>
             <section class="panel" aria-labelledby="how-it-works">
@@ -401,16 +437,14 @@
                 </div>
                 <div class="step">
                   <span class="step-num" aria-hidden="true">3</span>
-                  <p>You get reports by email every Monday and Thursday.</p>
+                  <p>You get reports by email on your delivery days.</p>
                 </div>
               </div>
             </section>
-            <section class="panel" aria-labelledby="contract">
-              <h2 id="contract">Contract</h2>
+            <section class="panel" aria-labelledby="who">
+              <h2 id="who">Who it’s for</h2>
               <ul>
-                <li>$29.95/month base</li>
-                <li>No setup fee</li>
-                <li>One-year contract</li>
+                <li>Contractors and vendors bidding on Florida county government work</li>
               </ul>
             </section>
           </div>
@@ -418,15 +452,20 @@
           <div class="meta-row">
             <section class="meta" aria-labelledby="coverage">
               <h2 id="coverage">Coverage</h2>
-              <p>Base: four Florida counties. Add extras up to all 67 counties, or take the full-state bundle.</p>
+              <p>Choose any number of Florida counties up to all 67, or take Full State.</p>
             </section>
-            <section class="meta" aria-labelledby="who">
-              <h2 id="who">Who it’s for</h2>
-              <p>Contractors and vendors bidding on Florida county government work.</p>
+            <section class="meta contact" aria-labelledby="contact">
+              <h2 id="contact">Contact</h2>
+              <p>
+                <a href="mailto:sspinetta@mac.com">sspinetta@mac.com</a><br />
+                <a href="tel:+17722335567">772-233-5567</a>
+              </p>
+            </section>
+            <section class="meta" aria-labelledby="company-meta">
+              <h2 id="company-meta">Company</h2>
+              <p>Sylvester Spinetta LLC · Okeechobee, Florida</p>
             </section>
           </div>
-
-          <p class="contact">Questions? Contact Sylvester Spinetta LLC</p>
         </div>
       </div>
     </main>
@@ -435,5 +474,58 @@
       © 2026 Sylvester Spinetta LLC
     </footer>
   </div>
+
+  <script>
+    (function () {
+      var CPU = 5;
+      var UNIT = 4.99;
+      var CONFIG_URL = "https://buy.stripe.com/test_cNieVea5kazyaqTfce7N605";
+      var FULL_URL = "https://buy.stripe.com/test_cNibJ21yO232dD55BE7N604";
+
+      var countiesEl = document.getElementById("counties");
+      var daysEl = document.getElementById("days");
+      var totalEl = document.getElementById("total");
+      var btn = document.getElementById("checkout-btn");
+
+      function fillSelect(el, max, selected) {
+        var html = "";
+        for (var i = 0; i <= max; i++) {
+          html += '<option value="' + i + '"' + (i === selected ? " selected" : "") + ">" + i + "</option>";
+        }
+        el.innerHTML = html;
+      }
+
+      function money(n) {
+        return "$" + n.toFixed(2);
+      }
+
+      function calc() {
+        var c = parseInt(countiesEl.value, 10);
+        var d = parseInt(daysEl.value, 10);
+        var total = CPU + c * UNIT + d * UNIT;
+        totalEl.textContent = money(total);
+        // Expose for headless tests
+        btn.dataset.counties = String(c);
+        btn.dataset.days = String(d);
+        btn.dataset.total = total.toFixed(2);
+        if (c === 67 && d === 7) {
+          btn.dataset.href = FULL_URL;
+          btn.textContent = "Continue to Full State checkout";
+        } else {
+          btn.dataset.href = CONFIG_URL;
+          btn.textContent = "Continue to checkout";
+        }
+      }
+
+      fillSelect(countiesEl, 67, 4);
+      fillSelect(daysEl, 7, 2);
+      countiesEl.addEventListener("change", calc);
+      daysEl.addEventListener("change", calc);
+      btn.addEventListener("click", function () {
+        window.location.href = btn.dataset.href || CONFIG_URL;
+      });
+      calc();
+    })();
+  </script>
 </body>
 </html>
