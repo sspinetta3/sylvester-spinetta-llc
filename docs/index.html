@@ -7,7 +7,7 @@
   <meta property="og:title" content="Florida Bid Search" />
   <meta property="og:description" content="No setup fee. Four Florida counties covered. Monday and Thursday bid reports delivered to your email. One-year contract." />
   <meta property="og:type" content="website" />
-  <meta name="description" content="Florida Bid Search — Florida County RFP Bid Search. $29.95/month. No setup fee." />
+  <meta name="description" content="Florida Bid Search — Florida County RFP Bid Search. Base $29.95/mo. Bundle $299/mo for all 67 counties, 7 days a week." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -38,7 +38,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0.65rem 1.25rem 0.5rem;
+      padding: 0.5rem 1.1rem 0.4rem;
       overflow-x: hidden;
     }
     .page {
@@ -51,36 +51,32 @@
     header.top {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.55rem;
+      gap: 0.65rem;
+      margin-bottom: 0.4rem;
       flex-shrink: 0;
     }
     .logo {
-      width: 44px;
-      height: 44px;
-      border-radius: 11px;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 6px 16px rgba(0,0,0,0.3);
       flex-shrink: 0;
     }
     .logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .company {
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--cyan-bright);
     }
-    .location {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 0.1rem;
-    }
+    .location { font-size: 0.74rem; color: var(--muted); margin-top: 0.05rem; }
     .card {
       background: linear-gradient(165deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05));
       border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 20px;
-      padding: 0.9rem 1.1rem 0.85rem;
+      border-radius: 18px;
+      padding: 0.7rem 0.95rem 0.65rem;
       box-shadow: var(--shadow);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
@@ -91,17 +87,17 @@
     }
     .hero {
       display: grid;
-      grid-template-columns: minmax(280px, 0.95fr) minmax(360px, 1.15fr);
-      gap: 1.1rem 1.35rem;
+      grid-template-columns: minmax(240px, 0.78fr) minmax(420px, 1.22fr);
+      gap: 0.85rem 1.1rem;
       align-items: start;
       flex: 1;
       min-height: 0;
     }
     .product {
       width: 100%;
-      max-width: 460px;
+      max-width: 380px;
       margin: 0 auto;
-      border-radius: 14px;
+      border-radius: 12px;
       overflow: hidden;
       border: 1px solid var(--border);
       box-shadow: 0 10px 28px rgba(0,0,0,0.25);
@@ -110,176 +106,214 @@
       align-self: center;
     }
     .product img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .info { display: flex; flex-direction: column; gap: 0.55rem; min-width: 0; }
+    .info { display: flex; flex-direction: column; gap: 0.4rem; min-width: 0; }
     h1 {
-      font-size: clamp(1.55rem, 2.4vw, 2rem);
+      font-size: clamp(1.4rem, 2.1vw, 1.85rem);
       font-weight: 800;
-      line-height: 1.1;
+      line-height: 1.08;
       letter-spacing: -0.02em;
     }
     .subtitle {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--fog);
-      margin-top: -0.15rem;
+      margin-top: -0.1rem;
     }
-    .price-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 0.55rem 0.85rem;
-    }
-    .price {
-      font-size: clamp(1.55rem, 2.2vw, 1.9rem);
-      font-weight: 800;
-      line-height: 1;
-      color: var(--orange);
-    }
-    .price-note { font-size: 0.88rem; color: var(--muted); font-weight: 500; }
     .desc {
-      font-size: 0.92rem;
-      line-height: 1.4;
+      font-size: 0.84rem;
+      line-height: 1.35;
       color: var(--fog);
-      max-width: 54ch;
+      max-width: 58ch;
     }
-    .subscribe {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: min(100%, 280px);
-      min-height: 46px;
-      padding: 0.65rem 1.2rem;
-      font-family: inherit;
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      text-decoration: none;
-      color: var(--white);
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--orange), var(--pink) 55%, #ff4d9a);
-      box-shadow: 0 10px 24px rgba(255,45,122,0.32);
-    }
-    .subscribe:hover { filter: brightness(1.05); }
-    .subscribe:focus-visible { outline: 3px solid var(--cyan-bright); outline-offset: 2px; }
-    .panels {
+    .pricing {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.55rem;
-      margin-top: 0.15rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
     }
-    .panel {
+    .price-card {
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 0.55rem 0.65rem 0.6rem;
+      border-radius: 11px;
+      padding: 0.45rem 0.55rem 0.5rem;
     }
-    .panel h2 {
-      font-size: 0.78rem;
+    .price-card.bundle {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(255,107,44,0.22), rgba(255,45,122,0.18), rgba(0,180,239,0.18));
+      border-color: rgba(255,107,44,0.45);
+    }
+    .price-card h2 {
+      font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--cyan-bright);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.15rem;
     }
-    .panel ul { list-style: none; }
-    .panel li {
-      font-size: 0.82rem;
-      line-height: 1.35;
+    .price-card .amt {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--orange);
+      line-height: 1.1;
+    }
+    .price-card .amt span { font-size: 0.78rem; font-weight: 600; color: var(--muted); }
+    .price-card p {
+      font-size: 0.78rem;
+      line-height: 1.3;
       color: var(--fog);
-      padding-left: 0.85rem;
-      position: relative;
-      margin-bottom: 0.22rem;
+      margin-top: 0.2rem;
     }
-    .panel li:last-child { margin-bottom: 0; }
-    .panel li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.42em;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--orange), var(--pink));
+    .price-card .save {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #7dffb3;
+      margin-top: 0.15rem;
     }
-    .panel p, .panel .step {
-      font-size: 0.82rem;
-      line-height: 1.35;
-      color: var(--fog);
-    }
-    .steps { display: flex; flex-direction: column; gap: 0.28rem; }
-    .step {
-      display: grid;
-      grid-template-columns: 1.35rem 1fr;
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
       gap: 0.4rem;
-      align-items: start;
+      margin-top: 0.1rem;
     }
-    .step-num {
-      width: 1.35rem;
-      height: 1.35rem;
-      border-radius: 50%;
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.72rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--orange), var(--pink));
+      min-height: 38px;
+      padding: 0.45rem 0.85rem;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-decoration: none;
       color: var(--white);
-      flex-shrink: 0;
+      border-radius: 10px;
+      border: 1px solid transparent;
     }
-    .meta-row {
+    .btn-primary {
+      background: linear-gradient(135deg, var(--orange), var(--pink) 55%, #ff4d9a);
+      box-shadow: 0 8px 20px rgba(255,45,122,0.3);
+    }
+    .btn-bundle {
+      background: linear-gradient(135deg, #ff8a3d, #ff2d7a);
+      box-shadow: 0 8px 20px rgba(255,107,44,0.32);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.28);
+    }
+    .btn:hover { filter: brightness(1.06); }
+    .btn:focus-visible { outline: 3px solid var(--cyan-bright); outline-offset: 2px; }
+    .panels {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.55rem;
-      margin-top: 0.15rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.4rem;
     }
-    .meta {
+    .panel {
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 0.5rem 0.65rem;
+      border-radius: 11px;
+      padding: 0.4rem 0.5rem 0.45rem;
     }
-    .meta h2 {
-      font-size: 0.78rem;
+    .panel h2 {
+      font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--cyan-bright);
       margin-bottom: 0.25rem;
     }
-    .meta p { font-size: 0.82rem; line-height: 1.35; color: var(--fog); }
-    .contact {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-top: 0.15rem;
+    .panel ul { list-style: none; }
+    .panel li {
+      font-size: 0.76rem;
+      line-height: 1.3;
+      color: var(--fog);
+      padding-left: 0.75rem;
+      position: relative;
+      margin-bottom: 0.15rem;
     }
+    .panel li:last-child { margin-bottom: 0; }
+    .panel li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.4em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), var(--pink));
+    }
+    .steps { display: flex; flex-direction: column; gap: 0.2rem; }
+    .step {
+      display: grid;
+      grid-template-columns: 1.15rem 1fr;
+      gap: 0.3rem;
+      align-items: start;
+      font-size: 0.76rem;
+      line-height: 1.3;
+      color: var(--fog);
+    }
+    .step-num {
+      width: 1.15rem;
+      height: 1.15rem;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--orange), var(--pink));
+      color: var(--white);
+    }
+    .meta-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
+    }
+    .meta {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 0.4rem 0.5rem;
+    }
+    .meta h2 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cyan-bright);
+      margin-bottom: 0.15rem;
+    }
+    .meta p { font-size: 0.76rem; line-height: 1.3; color: var(--fog); }
+    .contact { font-size: 0.76rem; color: var(--muted); }
     footer {
       flex-shrink: 0;
-      padding-top: 0.45rem;
+      padding-top: 0.35rem;
       text-align: center;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: rgba(255,255,255,0.5);
     }
     @media (max-width: 900px) {
       body { padding: 0.85rem 0.9rem 0.85rem; height: auto; overflow: auto; }
       html, body { height: auto; }
-      .hero { grid-template-columns: 1fr; gap: 0.85rem; }
-      .product { max-width: 320px; }
-      .panels { grid-template-columns: 1fr; }
-      .meta-row { grid-template-columns: 1fr; }
-      .card { padding: 0.95rem 0.95rem 1rem; }
-      header.top { margin-bottom: 0.7rem; }
+      .hero { grid-template-columns: 1fr; gap: 0.75rem; }
+      .product { max-width: 280px; }
+      .pricing, .panels, .meta-row { grid-template-columns: 1fr; }
+      .price-card.bundle { grid-column: auto; }
+      .card { padding: 0.85rem; }
+      header.top { margin-bottom: 0.6rem; }
+      .cta-row { flex-direction: column; }
+      .btn { width: 100%; }
     }
     @media (max-height: 820px) and (min-width: 901px) {
-      body { padding: 0.4rem 1rem 0.35rem; }
-      .logo { width: 38px; height: 38px; border-radius: 9px; }
-      .product { max-width: 380px; }
-      h1 { font-size: 1.55rem; }
-      .price { font-size: 1.5rem; }
-      .panels, .meta-row { gap: 0.4rem; }
-      .panel, .meta { padding: 0.4rem 0.55rem; }
-      .card { padding: 0.7rem 0.9rem 0.65rem; }
-      .info { gap: 0.4rem; }
-      .subscribe { min-height: 40px; font-size: 0.98rem; }
+      body { padding: 0.3rem 0.85rem 0.25rem; }
+      .logo { width: 34px; height: 34px; }
+      .product { max-width: 300px; }
+      h1 { font-size: 1.35rem; }
+      .info { gap: 0.3rem; }
+      .card { padding: 0.55rem 0.75rem; }
+      .price-card .amt { font-size: 1.02rem; }
+      .btn { min-height: 34px; font-size: 0.82rem; }
+      .panels, .pricing, .meta-row { gap: 0.3rem; }
     }
   </style>
 </head>
@@ -287,7 +321,7 @@
   <div class="page">
     <header class="top">
       <div class="logo">
-        <img src="logo.png" alt="Sylvester Spinetta LLC logo" width="44" height="44" />
+        <img src="logo.png" alt="Sylvester Spinetta LLC logo" width="40" height="40" />
       </div>
       <div>
         <p class="company">Sylvester Spinetta LLC</p>
@@ -309,24 +343,47 @@
         <div class="info">
           <h1>Florida Bid Search</h1>
           <p class="subtitle">Florida County RFP Bid Search</p>
-          <div class="price-row">
-            <p class="price">$29.95/month</p>
-            <p class="price-note">No setup fee · One-year contract</p>
-          </div>
           <p class="desc">
             No setup fee. Four Florida counties covered. Monday and Thursday bid reports delivered to your email. One-year contract.
           </p>
-          <a
-            class="subscribe"
-            href="https://buy.stripe.com/test_6oU8wQ7Xc9vu9mPaVY7N601"
-          >Subscribe</a>
+
+          <section class="pricing" aria-labelledby="pricing-title">
+            <h2 id="pricing-title" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Pricing</h2>
+            <div class="price-card">
+              <h2>Base</h2>
+              <p class="amt">$29.95<span>/mo</span></p>
+              <p>4 Florida counties · Monday and Thursday email reports · No setup fee · One-year contract</p>
+            </div>
+            <div class="price-card">
+              <h2>Extra county</h2>
+              <p class="amt">+$4.95<span>/mo each</span></p>
+              <p>Add up to 63 more counties (67 total = entire state)</p>
+            </div>
+            <div class="price-card">
+              <h2>Extra delivery day</h2>
+              <p class="amt">+$4.95<span>/mo each</span></p>
+              <p>Add up to 5 more days for 7 days a week</p>
+            </div>
+            <div class="price-card bundle">
+              <h2>Bundle — all 67 counties, 7 days a week</h2>
+              <p class="amt">$299<span>/mo</span></p>
+              <p>Full-state daily coverage. À la carte for the same coverage is $366.55/mo ($29.95 + 63 × $4.95 + 5 × $4.95).</p>
+              <p class="save">Save $67.55/mo vs building it à la carte</p>
+            </div>
+          </section>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://buy.stripe.com/test_00wdRa7Xc6jifLdfce7N603">Build your plan</a>
+            <a class="btn btn-bundle" href="https://buy.stripe.com/test_6oUbJ2gtI7nmcz11lo7N602">Get the full-state bundle</a>
+            <a class="btn btn-secondary" href="https://buy.stripe.com/test_6oU8wQ7Xc9vu9mPaVY7N601">Start with base plan</a>
+          </div>
 
           <div class="panels">
             <section class="panel" aria-labelledby="what-you-get">
               <h2 id="what-you-get">What you get</h2>
               <ul>
-                <li>Monday and Thursday bid reports by email</li>
-                <li>Coverage across four Florida counties</li>
+                <li>Monday and Thursday bid reports by email (base)</li>
+                <li>Coverage across four Florida counties (base)</li>
                 <li>Florida county bid and RFP posting search</li>
                 <li>No setup fee</li>
               </ul>
@@ -348,10 +405,10 @@
                 </div>
               </div>
             </section>
-            <section class="panel" aria-labelledby="pricing">
-              <h2 id="pricing">Pricing summary</h2>
+            <section class="panel" aria-labelledby="contract">
+              <h2 id="contract">Contract</h2>
               <ul>
-                <li>$29.95/month</li>
+                <li>$29.95/month base</li>
                 <li>No setup fee</li>
                 <li>One-year contract</li>
               </ul>
@@ -361,7 +418,7 @@
           <div class="meta-row">
             <section class="meta" aria-labelledby="coverage">
               <h2 id="coverage">Coverage</h2>
-              <p>Four Florida counties.</p>
+              <p>Base: four Florida counties. Add extras up to all 67 counties, or take the full-state bundle.</p>
             </section>
             <section class="meta" aria-labelledby="who">
               <h2 id="who">Who it’s for</h2>
