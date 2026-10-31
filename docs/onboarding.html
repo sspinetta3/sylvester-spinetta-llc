@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Florida Bid Search — Onboarding</title>
+  <meta name="description" content="Complete your Florida Bid Search setup: company, emails, counties, and delivery days." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0a1f44; --navy-deep: #06152e; --cyan-bright: #3dd6ff;
+      --orange: #ff6b2c; --pink: #ff2d7a; --white: #ffffff;
+      --fog: rgba(255,255,255,0.88); --muted: rgba(255,255,255,0.72);
+      --panel: rgba(255,255,255,0.08); --border: rgba(255,255,255,0.18);
+      --shadow: 0 16px 40px rgba(6, 21, 46, 0.4);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh;
+      font-family: "DM Sans", system-ui, sans-serif; color: var(--white);
+      background: radial-gradient(ellipse at 20% 0%, rgba(61,214,255,0.18), transparent 50%),
+        radial-gradient(ellipse at 90% 10%, rgba(255,107,44,0.15), transparent 45%),
+        linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 45%, #122a5c 100%);
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 1.25rem 1rem 2.5rem; }
+    header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .logo-slot {
+      width: 48px; height: 48px; border-radius: 10px;
+      border: 1px dashed var(--border); background: var(--panel);
+      display: grid; place-items: center; font-size: 0.65rem; color: var(--muted);
+    }
+    h1 { margin: 0; font-size: 1.35rem; }
+    .sub { color: var(--muted); font-size: 0.85rem; margin-top: 0.2rem; }
+    .card {
+      background: linear-gradient(165deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05));
+      border: 1px solid var(--border); border-radius: 16px; padding: 1.1rem 1.15rem;
+      box-shadow: var(--shadow);
+    }
+    .caps {
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; margin-bottom: 0.9rem;
+      font-size: 0.82rem; color: var(--fog);
+    }
+    .caps strong { color: var(--orange); }
+    label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--muted); margin: 0.65rem 0 0.25rem; }
+    input[type=text], input[type=email], input[type=tel], input[type=time], select {
+      width: 100%; padding: 0.55rem 0.65rem; border-radius: 8px;
+      border: 1px solid var(--border); background: rgba(6,21,46,0.65); color: var(--white);
+      font: inherit;
+    }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 0.75rem; }
+    @media (max-width: 560px) { .grid2 { grid-template-columns: 1fr; } }
+    .counties {
+      max-height: 220px; overflow: auto; border: 1px solid var(--border);
+      border-radius: 10px; padding: 0.45rem 0.55rem; background: rgba(0,0,0,0.2);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.15rem 0.5rem;
+    }
+    @media (max-width: 560px) { .counties { grid-template-columns: 1fr; } }
+    .counties label { display: flex; align-items: center; gap: 0.4rem; margin: 0; font-weight: 400; color: var(--fog); font-size: 0.8rem; }
+    .days { display: flex; flex-wrap: wrap; gap: 0.4rem 0.75rem; }
+    .days label { display: flex; align-items: center; gap: 0.35rem; margin: 0; font-weight: 400; color: var(--fog); }
+    .hint { font-size: 0.75rem; color: var(--muted); margin-top: 0.35rem; }
+    .err { color: #ff8a9a; font-size: 0.85rem; margin-top: 0.6rem; white-space: pre-wrap; }
+    .ok { color: #7dffb3; font-size: 0.85rem; margin-top: 0.6rem; }
+    .btn {
+      margin-top: 1rem; width: 100%; border: 0; border-radius: 999px; padding: 0.85rem 1rem;
+      font: inherit; font-weight: 700; cursor: pointer; color: #06152e;
+      background: linear-gradient(90deg, var(--cyan-bright), #7dffb3);
+    }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .cfg { margin-top: 0.85rem; font-size: 0.72rem; color: var(--muted); }
+    .cfg code { color: var(--cyan-bright); }
+    footer { margin-top: 1.25rem; text-align: center; font-size: 0.72rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo-slot" aria-hidden="true">logo</div>
+      <div>
+        <h1>Florida Bid Search — Onboarding</h1>
+        <div class="sub">Sylvester Spinetta LLC · Okeechobee, Florida</div>
+      </div>
+    </header>
+    <div class="card">
+      <div class="caps" id="caps">
+        Loading paid quantities for this checkout session…
+      </div>
+      <form id="form" novalidate>
+        <label for="company_name">Company name</label>
+        <input id="company_name" name="company_name" type="text" required autocomplete="organization" />
+
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel" required autocomplete="tel" />
+
+        <div class="grid2">
+          <div>
+            <label for="email1">Email 1 (required)</label>
+            <input id="email1" name="email1" type="email" required autocomplete="email" />
+          </div>
+          <div>
+            <label for="email2">Email 2</label>
+            <input id="email2" name="email2" type="email" />
+          </div>
+          <div>
+            <label for="email3">Email 3</label>
+            <input id="email3" name="email3" type="email" />
+          </div>
+          <div>
+            <label for="email4">Email 4</label>
+            <input id="email4" name="email4" type="email" />
+          </div>
+        </div>
+
+        <label>Florida counties <span id="county-count"></span></label>
+        <div class="counties" id="counties"></div>
+        <p class="hint" id="county-hint">Select up to your paid county quantity.</p>
+
+        <label>Delivery days <span id="day-count"></span></label>
+        <div class="days" id="days"></div>
+        <p class="hint" id="day-hint">Select up to your paid email days per week (Mon–Sun).</p>
+
+        <label for="delivery_time">Delivery time (America/New_York)</label>
+        <input id="delivery_time" name="delivery_time" type="time" value="09:00" required />
+
+        <button class="btn" id="submit" type="submit" disabled>Submit onboarding</button>
+        <div class="err" id="err" hidden></div>
+        <div class="ok" id="ok" hidden></div>
+      </form>
+      <p class="cfg">
+        Receiver URL (configurable): <code id="receiver-url-display"></code><br />
+        Override with <code>?receiver=https://your-host</code> or localStorage key <code>fbs_receiver_url</code>.
+        The static GitHub Pages site POSTs to the receiver; the receiver needs public HTTPS hosting (not deployed yet).
+      </p>
+    </div>
+    <footer>© 2026 Sylvester Spinetta LLC · Questions: <a href="mailto:sspinetta@mac.com" style="color:var(--cyan-bright)">sspinetta@mac.com</a> · 772-233-5567</footer>
+  </div>
+  <script>
+(function () {
+  var COUNTIES = ["Alachua", "Baker", "Bay", "Bradford", "Brevard", "Broward", "Calhoun", "Charlotte", "Citrus", "Clay", "Collier", "Columbia", "DeSoto", "Dixie", "Duval", "Escambia", "Flagler", "Franklin", "Gadsden", "Gilchrist", "Glades", "Gulf", "Hamilton", "Hardee", "Hendry", "Hernando", "Highlands", "Hillsborough", "Holmes", "Indian River", "Jackson", "Jefferson", "Lafayette", "Lake", "Lee", "Leon", "Levy", "Liberty", "Madison", "Manatee", "Marion", "Martin", "Miami-Dade", "Monroe", "Nassau", "Okaloosa", "Okeechobee", "Orange", "Osceola", "Palm Beach", "Pasco", "Pinellas", "Polk", "Putnam", "Santa Rosa", "Sarasota", "Seminole", "St. Johns", "St. Lucie", "Sumter", "Suwannee", "Taylor", "Union", "Volusia", "Wakulla", "Walton", "Washington"];
+  var DAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+  var params = new URLSearchParams(location.search);
+  var sessionId = params.get("session_id") || params.get("sessionId") || "";
+  var receiverUrl = (params.get("receiver") || localStorage.getItem("fbs_receiver_url") || "").replace(/\/$/, "");
+  // Default placeholder — replace when the receiver is publicly hosted
+  if (!receiverUrl) receiverUrl = "https://RECEIVER_HOST_NOT_SET.example";
+
+  var countiesPaid = null;
+  var daysPaid = null;
+  var plan = "configurable";
+
+  document.getElementById("receiver-url-display").textContent = receiverUrl;
+
+  function $(id) { return document.getElementById(id); }
+  function showErr(msg) { var e=$("err"); e.hidden=!msg; e.textContent=msg||""; $("ok").hidden=true; }
+  function showOk(msg) { var o=$("ok"); o.hidden=!msg; o.textContent=msg||""; $("err").hidden=true; }
+
+  function renderCounties() {
+    var root = $("counties");
+    root.innerHTML = "";
+    COUNTIES.forEach(function (c) {
+      var lab = document.createElement("label");
+      var cb = document.createElement("input");
+      cb.type = "checkbox"; cb.value = c; cb.name = "county";
+      cb.addEventListener("change", onCountyChange);
+      lab.appendChild(cb); lab.appendChild(document.createTextNode(c));
+      root.appendChild(lab);
+    });
+  }
+  function renderDays() {
+    var root = $("days");
+    root.innerHTML = "";
+    DAYS.forEach(function (d) {
+      var lab = document.createElement("label");
+      var cb = document.createElement("input");
+      cb.type = "checkbox"; cb.value = d; cb.name = "day";
+      cb.addEventListener("change", onDayChange);
+      lab.appendChild(cb); lab.appendChild(document.createTextNode(d.slice(0,3)));
+      root.appendChild(lab);
+    });
+  }
+  function selectedCounties() {
+    return Array.prototype.map.call(document.querySelectorAll('input[name="county"]:checked'), function (el) { return el.value; });
+  }
+  function selectedDays() {
+    return Array.prototype.map.call(document.querySelectorAll('input[name="day"]:checked'), function (el) { return el.value; });
+  }
+  function onCountyChange(ev) {
+    if (countiesPaid == null) return;
+    var sel = selectedCounties();
+    if (sel.length > countiesPaid) {
+      ev.target.checked = false;
+      showErr("County cap is " + countiesPaid + " (what you paid for).");
+    } else {
+      showErr("");
+    }
+    $("county-count").textContent = "(" + selectedCounties().length + " / " + countiesPaid + ")";
+  }
+  function onDayChange(ev) {
+    if (daysPaid == null) return;
+    var sel = selectedDays();
+    if (sel.length > daysPaid) {
+      ev.target.checked = false;
+      showErr("Delivery-day cap is " + daysPaid + " (what you paid for).");
+    } else {
+      showErr("");
+    }
+    $("day-count").textContent = "(" + selectedDays().length + " / " + daysPaid + ")";
+  }
+
+  function applyCaps(c, d, p) {
+    countiesPaid = c; daysPaid = d; plan = p || "configurable";
+    if (plan === "full_state") {
+      // lock 67/7 — pre-check all, disable unchecking beyond lock messaging
+      document.querySelectorAll('input[name="county"]').forEach(function (el) { el.checked = true; el.disabled = true; });
+      document.querySelectorAll('input[name="day"]').forEach(function (el) { el.checked = true; el.disabled = true; });
+    }
+    $("caps").innerHTML = "Session <strong>" + (sessionId || "(missing)") + "</strong> · Plan <strong>" + plan +
+      "</strong> · Counties paid <strong>" + countiesPaid + "</strong> · Days paid <strong>" + daysPaid + "</strong>" +
+      " · Pricing floor $29.98/mo (4×$5 + 2×$4.99)";
+    $("county-count").textContent = "(0 / " + countiesPaid + ")";
+    $("day-count").textContent = "(0 / " + daysPaid + ")";
+    if (plan === "full_state") {
+      $("county-count").textContent = "(67 / 67)";
+      $("day-count").textContent = "(7 / 7)";
+    }
+    $("submit").disabled = !sessionId || !countiesPaid || !daysPaid;
+  }
+
+  function loadCaps() {
+    renderCounties();
+    renderDays();
+    // Optional demo overrides for headless tests without a live receiver
+    var qc = params.get("counties_paid");
+    var qd = params.get("days_paid");
+    var qp = params.get("plan");
+    if (qc && qd) {
+      applyCaps(parseInt(qc, 10), parseInt(qd, 10), qp || "configurable");
+      return Promise.resolve();
+    }
+    if (!sessionId) {
+      $("caps").textContent = "Missing session_id in the URL. Complete Stripe checkout first (success redirect includes session_id).";
+      return Promise.resolve();
+    }
+    if (receiverUrl.indexOf("RECEIVER_HOST_NOT_SET") !== -1) {
+      $("caps").innerHTML = "Session <strong>" + sessionId + "</strong> — receiver not hosted yet. " +
+        "Set <code>?receiver=https://…</code> or use <code>?counties_paid=4&amp;days_paid=2</code> for local testing.";
+      // Still allow demo with defaults if query provided elsewhere — leave submit disabled
+      return Promise.resolve();
+    }
+    return fetch(receiverUrl + "/session/" + encodeURIComponent(sessionId), { method: "GET" })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (res) {
+        if (!res.ok || !res.j.ok) {
+          showErr((res.j && (res.j.error || res.j.hint)) || "Could not load paid quantities for this session.");
+          return;
+        }
+        applyCaps(res.j.counties_paid, res.j.days_paid, res.j.plan);
+      })
+      .catch(function (e) {
+        showErr("Receiver unreachable (" + e + "). Host the auto-activation receiver and set ?receiver=…");
+      });
+  }
+
+  $("form").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    showErr(""); showOk("");
+    var counties = selectedCounties();
+    var days = selectedDays();
+    if (!sessionId) return showErr("Missing session_id.");
+    if (countiesPaid == null || daysPaid == null) return showErr("Paid quantities not loaded.");
+    if (counties.length < 1) return showErr("Select at least one county.");
+    if (counties.length > countiesPaid) return showErr("Too many counties.");
+    if (days.length < 1) return showErr("Select at least one delivery day.");
+    if (days.length > daysPaid) return showErr("Too many delivery days.");
+    var emails = [$("email1").value.trim(), $("email2").value.trim(), $("email3").value.trim(), $("email4").value.trim()];
+    if (!emails[0]) return showErr("Email 1 is required.");
+    var body = {
+      stripe_session_id: sessionId,
+      company_name: $("company_name").value.trim(),
+      phone: $("phone").value.trim(),
+      emails: emails,
+      counties: counties,
+      delivery_day_names: days,
+      delivery_times: [$("delivery_time").value || "09:00"],
+      business_types: ["landscape"]
+    };
+    if (receiverUrl.indexOf("RECEIVER_HOST_NOT_SET") !== -1) {
+      showErr("Receiver URL not configured. The page is ready; host /workspace/auto-activation/receiver.py on HTTPS and set ?receiver=.");
+      console.log("onboarding payload (not sent)", body);
+      return;
+    }
+    $("submit").disabled = true;
+    fetch(receiverUrl + "/onboarding", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (res) {
+        $("submit").disabled = false;
+        if (!res.ok || res.j.ok === false) {
+          showErr((res.j.errors && res.j.errors.join("\\n")) || res.j.error || "Submission failed");
+          return;
+        }
+        showOk("Submitted: " + (res.j.status || "ok") + (res.j.slug ? (" · slug " + res.j.slug) : ""));
+      })
+      .catch(function (e) {
+        $("submit").disabled = false;
+        showErr("Network error: " + e);
+      });
+  });
+
+  loadCaps();
+})();
+  </script>
+</body>
+</html>

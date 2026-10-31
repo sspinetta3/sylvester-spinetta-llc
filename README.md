@@ -46,3 +46,11 @@ Or open `docs/index.html` directly in a browser.
 - Product subtitle: Florida County RFP Bid Search
 - Price: $29.95/month
 - Description: No setup fee. Four Florida counties covered. Monday and Thursday bid reports delivered to your email. One-year contract.
+
+## Onboarding
+
+After Stripe Checkout (test), customers are redirected to:
+
+`https://sspinetta3.github.io/sylvester-spinetta-llc/onboarding.html?session_id={CHECKOUT_SESSION_ID}`
+
+Source: `docs/onboarding.html`. The page POSTs to a configurable auto-activation receiver (`?receiver=https://…`). The receiver lives in `/workspace/auto-activation` and is **not** publicly hosted yet — see that README for webhook registration steps.
